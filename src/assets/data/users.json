@@ -1,0 +1,26 @@
+{
+	"Data": {
+		"allAsstOrgs": [{
+			"orgName": "Test Flag",
+			"pId": 3068025,
+			"orgId": 3068025
+		}],
+		"allUsers": [{
+			"screenName": "sn000admin",
+			"userId": 3068035
+		},
+		{
+			"screenName": "sn000system",
+			"userId": 3068036
+		},{
+			"screenName": "networkadmin",
+			"userId": 3068037
+		},
+	{
+		"screenName": "100admin",
+		"userId": 3068038
+	}]
+	},
+	"status": "success"
+}
+

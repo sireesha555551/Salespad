@@ -1,0 +1,143 @@
+@import '~themeVariables.scss';
+
+.add-user-form {
+  .add-user-dialog {
+    .ui-dialog {
+      width: 100% !important;
+      min-width: 200px !important;
+      max-width: 1050px !important;
+    }
+    .ui-dialog .ui-dialog-titlebar {
+      padding: 0.5em;
+      background: transparent;
+      border-bottom: 1px solid lightgray;
+    }
+    .ui-dialog-titlebar {
+      text-align: center;
+    }
+    .ui-dialog-content {
+      padding: 0px !important;
+      overflow: auto;
+      // max-height: 400px !important;
+    }
+    .ui-dialog-titlebar-close {
+      display: none;
+    }
+    .top-container {
+      padding: 20px;
+      border-bottom: 1px solid #d1d1d1;
+    }
+    .dropdown-cls {
+      .ui-autocomplete-dropdown.ui-button{
+        background: $resetButtonColor !important;
+
+      }
+
+      .ui-autocomplete {
+        width: 100% !important;
+        input {
+          width: 88%;
+        }
+        .ui-inputtext:focus {
+          box-shadow: none;
+        }
+        .ui-autocomplete-list-item.ui-state-highlight {
+          background: $resetButtonColor;
+
+          color: #ffffff;
+        }
+      }
+    }
+    .add-user-heading {
+      margin-bottom: 5px;
+      opacity: 0.7;
+      font-size: 13px;
+    }
+    .tree-table-dropdown-container {
+      padding: 20px;
+      // border-bottom: 1px solid #d1d1d1;
+    }
+    .footer-toolbar {
+      padding: 1em;
+      border-top: 1px solid #d1d1d1;
+      .cancel-btn {
+        background: #404656 !important;
+        border: 1px solid #404656 !important;
+      }
+      .reset-btn {
+        background: #4671d9 !important;
+        border: 1px solid #4671d9 !important;
+      }
+    }
+    .tree-table-dropdown-container {
+      .ptree-dropdown-container {
+        // width: 60%;
+      }
+    }
+    .organisation-inp {
+      width: 100%;
+      border-width: 0px;
+    }
+    .organisation-inp.ui-widget:disabled {
+      opacity: 1;
+    }
+
+    .ui-g.org-list-wrapper {
+      border-bottom: 1px solid #bebebe;
+    }
+    .ui-g.org-list-wrapper:last-child {
+      border-bottom: 0px;
+    }
+    .ui-g.org-list-wrapper:first-child {
+      margin-top: 10px;
+    }
+    .delete-button {
+      float: right;
+      background: white !important;
+      border: none !important;
+      color: #000 !important;
+      background-image: url('../../assets/images/icons/delete_icon.svg') !important;
+      background-repeat: no-repeat !important;
+      width: 20px !important;
+      height: 20px !important;
+      .ui-button:hover {
+        background: white !important;
+        border: none !important;
+        background-image: url('../../assets/images/icons/delete_icon.svg') !important;
+        background-repeat: no-repeat !important;
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+
+    .add-user-form-container {
+      height: 320px;
+      overflow: auto;
+    }
+    .po-prefix-inp {
+      width: 100%;
+    }
+  }
+}
+
+.add-user-form {
+  .add-user-dialog {
+    .footer-toolbar {
+      .reset-btn {
+        background: $resetButtonColor !important;
+        border: none !important;
+        color: $resetButtonIconColor !important;
+      }
+      .cancel-btn {
+        background: $cancelButtonColor !important;
+        border: none !important;
+        color: $cancelButtonIconColor !important;
+      }
+      .save-btn {
+        background: $saveButtonColor !important;
+        border: none !important;
+        color: $saveButtonIconColor !important;
+      }
+    }
+  }
+}

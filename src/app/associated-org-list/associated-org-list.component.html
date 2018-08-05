@@ -1,0 +1,23 @@
+<ul class="associated-org-list">
+  <li *ngFor="let node of treeData">
+    <div class="hoverCls" *ngIf="node.children?.length == 0" (click)="selectNode(node,$event)" style="white-space:nowrap;">
+      <li class="childs" [style.display]="node.hidden == true ? 'none' : 'block'">
+        <input class="orgCbx" value="node" type="checkbox" (click)="onOrgSelection($event,node)" style="float:left;margin-right:5px;"
+          [checked]="node.isSelected">
+        <span [attr.deepNode]="node.deepNode">{{node.orgName}}</span>
+      </li>
+    </div>
+    <div #elem *ngIf="node.children?.length > 0">
+      <div class="parents" [style.display]="node.hidden == true ? 'none' : 'block'">
+        <i [ngClass]="getIconClass(node.expanded)" (click)="toggleList(elem,node)" style="float:left;margin-right: 2px;"></i>
+        <div class="parentname" (click)="selectNode(node,$event)">
+          <input class="orgCbx" value="node" type="checkbox" (click)="onOrgSelection($event,node)" style="float:left;margin-right:5px;"
+            [checked]="node.isSelected">
+          <span class="parent_node" [attr.deepNode]="node.deepNode">{{node.orgName}}</span>
+        </div>
+      </div>
+      <app-associated-org-list class="inner-associated-orglist" [treeData]="node.children" [style.display]="node.hidden == true ? 'none' : 'block'" [ngClass]="{'node-expand-cls':node.expanded,'node-collapse-cls':!node.expanded}"
+        rootNode="false" (nodeSelected)="childNodeSelection($event)"></app-associated-org-list>
+    </div>
+  </li>
+</ul>

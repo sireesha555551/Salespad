@@ -1,0 +1,67 @@
+<p-blockUI [target]="salespadform" [blocked]="formLoadingMaskVisible">
+  <i class="fa fa-circle-o-notch fa-2x fa-spin" style="position:absolute;top:50%;left:50%;color:#fff;"></i>
+</p-blockUI>
+<div class="add-user-form">
+  <p-dialog class="add-user-dialog" [header]="formHeader" width="700" [(visible)]="addUserVisible" [draggable]="dragDialog"
+    modal="true">
+    <p-panel #salespadform class="sales-pad-layout" showHeader="false" styleClass="panel">
+      <div class="add-user-form-container">
+        <div class="top-container" fxLayout="row" fxLayoutGap="20px" fxLayoutWrap>
+          <div fxFlex="49" class="organisation-dropdown-container">
+            <div class="add-user-heading">Select Organization</div>
+            <app-organisation-list *ngIf="!isEditUser" [(ngModel)]="selectedParentOrganization" (orgChanged)="orgListData($event)" [uiTreeData]="uiTreeData"></app-organisation-list>
+            <input type="text" class="organisation-inp" *ngIf="isEditUser" pInputText [(ngModel)]="editUserObject.orgName"  [disabled]="true" />
+          </div>
+          <div fxFlex="27" class="user-dropdown-container" *ngIf="!isEditUser">
+            <div class="add-user-heading">Select User</div>
+            <p-autoComplete class="dropdown-cls" placeholder="select user" [(ngModel)]="selectedUser" (ngModelChange)="onUserChange($event)"
+              (onSelect)="onUserClick($event)" [suggestions]="filterUsers" [size]="8" [dropdown]="true" field="screenName"
+              (completeMethod)="search($event)" emptyMessage="No users found"></p-autoComplete>
+          </div>
+          <div fxFlex="27" class="edit-user-container" *ngIf="isEditUser">
+            <div class="add-user-heading">User</div>
+            <input type="text" class="organisation-inp" pInputText [(ngModel)]="editUserObject.screenName" [disabled]="true" />
+          </div>
+          <div fxFlex>
+            <div class="add-user-heading">PO Prefix</div>
+            <input type="text" class="po-prefix-inp" pInputText [(ngModel)]="poPrefix" />
+          </div>
+        </div>
+        <div class="tree-table-dropdown-container">
+          <div fxLayout="row" fxLayoutGap="20px">
+            <div fxFlex="49">
+              <div class="add-user-heading">Select Associated Organization</div>
+
+              <app-associated-org-dropdown [treeData]="uiTreeData" [selectedAssociateOrganisations]="selectedAssociateOrganisations"
+                [selectedUser]="selectedUser" [isEditUser]="isEditUser" (onChildOrganisationSelect)="onChildOrganisationSelect($event)"></app-associated-org-dropdown>
+
+            </div>
+          </div>
+          <div *ngFor="let org of allRecords; let i = index" class="ui-g org-list-wrapper">
+            <div class="ui-g-8">
+              <input type="text" class="organisation-inp" pInputText [(ngModel)]="org.data.asstOrgName" [disabled]="true" />
+            </div>
+            <div class="ui-g-4 status-container">
+              <input class="active-raio" type="radio" [name]="i" #opt1 value=1 [checked]="getChecked(opt1,getActiveChecked(org))" (change)="onStatusChange(org,1)">
+              <label>Active</label>
+              <input type="radio" class="inactive-radio" [name]="i" #opt2 value=0 [checked]="getChecked(opt2,getInactiveChecked(org))"
+                (change)="onStatusChange(org,0)">
+              <label>Inactive</label>
+              <button *ngIf="i>=0" pButton class="delete-button" type="button" (click)="deleteAssociatedOrg(org,i)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-toolbar" fxLayout="row" fxLayoutGap="10px" fxLayoutWrap>
+        <button pButton class="ui-button-success save-btn" type="button" icon="fa fa-floppy-o" label="Save" (click)="save()" [disabled]="saveDisabled()"></button>
+        <button pButton class="reset-btn" type="button" icon="fa fa-undo" label="Reset" (click)="reset($event)"></button>
+        <button pButton class="cancel-btn" type="button" icon="fa fa-times-circle" label="Cancel" (click)="close($event)"></button>
+      </div>
+    </p-panel>
+
+  </p-dialog>
+  <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+</div>
+
+

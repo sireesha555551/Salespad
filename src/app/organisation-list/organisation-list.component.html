@@ -1,0 +1,28 @@
+
+<div class="organisation-list-container">
+  <div class="organisation-input-wrapper" (click)="onShowDropDownClick($event)">
+    <input type="text" class="organisation-input" pInputText [(ngModel)]="selectedOrganisation" [disabled]="true" />
+    <i class="down-arrow-icon fa fa-sort-desc" aria-hidden="true"></i>
+  </div>
+  <div *ngIf="showDropDown" class="tree-drop-down" (clickOutside)="onClickedOutside($event)" [exclude]="'.organisation-input-wrapper'">
+    <div class="tp-content">
+      <div class="headerpanel" fxLayout="row" fxLayoutAlign=" center">
+        <div class="ui icon input" fxFlex="94">
+          <div class="input-wrapper">
+            <input #srchTxt id="treeinput" type="text" placeholder="Search..." (keyup)="onTreeSearch($event,srchTxt,_uiTreeData)">
+            <span class="search-icon fa fa-search" (click)="filterTree($event,srchTxt,_uiTreeData)"></span>
+          </div>
+        </div>
+        <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+          <div class="collapse-button">
+            <span class="fa fa-align-left" (click)="collapseAll()" title="Collapse"></span>
+          </div>
+        </div>
+      </div>
+      <div id="mainTree">
+        <app-tree-view [treeData]="_uiTreeData" rootNode="true" (nodeSelected)="handleNodeSelection($event,op)"></app-tree-view>
+      </div>
+    </div>
+    <div id="listMask"><i class="fa fa-circle-o-notch fa-2x fa-spin" style="position:absolute;top:45%;left:45%;color:#fff;"></i></div>
+  </div>
+</div>

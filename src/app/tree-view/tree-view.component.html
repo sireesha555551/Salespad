@@ -1,0 +1,25 @@
+<p-blockUI class="tree-view-block-ui" [target]="treeView" [blocked]="showLoadingMask">
+  <i class="fa fa-circle-o-notch fa-2x fa-spin" style="position:absolute;top:45%;left:50%;color:#fff;"></i>
+</p-blockUI>
+<p-panel #treeView class="tree-layout" showHeader="false" styleClass="panel">
+
+  <ul class="tree-view-list">
+    <li *ngFor="let node of treeData">
+      <div class="hoverCls" *ngIf="!isParentNode(node)" (click)="selectNode(node,$event)" style="white-space:nowrap;">
+        <li class="childs" [hidden]="node.hidden == true ? true : false ">
+          <span [attr.deepNode]="node.deepNode">{{node.orgName}}</span>
+        </li>
+      </div>
+      <div #elem *ngIf="isParentNode(node)">
+        <div class="parents" [hidden]="node.hidden">
+          <i [ngClass]="getIconClass(node.expanded)" (click)="toggleList(elem,node)" style="float:left;margin-right: 5px;"></i>
+          <div class="parentname" (click)="selectNode(node,$event)">
+            <span class="parent_node" [attr.deepNode]="node.deepNode">{{node.orgName}}</span>
+          </div>
+        </div>
+        <app-tree-view class="inner-tree-view-list" [treeData]="node.children" [hidden]="node.hidden" [ngClass]="{'node-expand-cls':node.expanded,'node-collapse-cls':!node.expanded}"
+          rootNode="false" (nodeSelected)="childNodeSelection($event)"></app-tree-view>
+      </div>
+    </li>
+  </ul>
+</p-panel>

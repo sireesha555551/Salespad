@@ -1,0 +1,36 @@
+{
+	"Data": [{
+		"data": {
+			"orgName": "aa600 Pb Store",
+			"screenName": "aa600pb",
+			"userId": 2616745,
+			"orgId": 2616711,
+			"status":""
+		},
+		"children": [{
+			"data": {
+				"childOrgId": 2955002,
+				"childOrgName": "aa600 pw store",
+				"id": 13,
+				"status": 0
+			}
+		},
+		{
+			"data": {
+				"childOrgId": 143362,
+				"childOrgName": "mc050 A & A Muffler and Brake",
+				"id": 11,
+				"status": 1
+			}
+		},
+		{
+			"data": {
+				"childOrgId": 143361,
+				"childOrgName": "mc050 A ",
+				"id": 12,
+				"status": 1
+			}
+		}]
+	}],
+	"status": "success"
+}

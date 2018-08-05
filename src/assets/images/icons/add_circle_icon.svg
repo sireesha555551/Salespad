@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1623 310 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="ic_add_circle_outline_black_24px" transform="translate(1623 310)">
+    <path id="Path_10" data-name="Path 10" class="cls-1" d="M0,0H24V24H0Z"/>
+    <path id="Path_11" data-name="Path 11" class="cls-2" d="M10.45,5.841H8.913V8.913H5.841V10.45H8.913v3.073H10.45V10.45h3.073V8.913H10.45ZM9.682,2a7.682,7.682,0,1,0,7.682,7.682A7.684,7.684,0,0,0,9.682,2Zm0,13.827a6.145,6.145,0,1,1,6.145-6.145A6.153,6.153,0,0,1,9.682,15.827Z" transform="translate(2.318 4.637)"/>
+  </g>
+</svg>

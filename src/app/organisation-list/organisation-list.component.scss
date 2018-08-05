@@ -1,0 +1,173 @@
+.organisation-list-container {
+  position: relative;
+  #org-btn,
+  #org-btn-spin {
+    padding: 1px;
+    background: none;
+    font-size: 20px;
+    position: relative;
+    top: 9px;
+    left: 6px;
+  }
+  #op-tip {
+    position: absolute;
+    z-index: 10000;
+    top: 31px;
+    left: 106px;
+  }
+  #op-tip-1 {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+  #op-tip-2 {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid white;
+    position: relative;
+    left: 3px;
+    bottom: 7px;
+  }
+  #exp_icon,
+  #col_icon {
+    width: 25px;
+    height: 20px;
+    margin-right: 5px;
+    background-size: 65% 65%;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-color: #e5e5e5;
+    float: right;
+  }
+  #exp_icon {
+    margin-right: 8px !important;
+  }
+  .headerpanel {
+    border-bottom: 1px solid #efefef;
+    height: 35px;
+  }
+  #srchBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  #removeBtn {
+    font-size: 10px;
+    position: absolute;
+    right: 30px;
+    top: 12px;
+  }
+  #srchBtn,
+  #removeBtn {
+    padding: 0px;
+    margin: 0px;
+    background: white;
+  }
+  #treeinput {
+    padding: 3px;
+    width: 100%;
+  }
+  #treeinput::-ms-clear {
+    display: none;
+  }
+  .tp-base .ui-overlaypanel-content {
+    padding: 5px !important;
+  }
+  .tp-base .ui-overlaypanel {
+    left: 5px !important;
+    top: 40px !important;
+    overflow: hidden !important;
+    border-radius: 10px;
+  }
+  .tp-content {
+    // max-width: 500px;
+    overflow: hidden !important;
+  }
+  #mainTree {
+    min-height: 19px;
+    height: 136px;
+    max-height: 140px;
+    overflow: auto;
+  }
+  #dimUI {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+  }
+  #organisation-id {
+    float: left;
+    font: bold 13px arial, tahoma, helvetica, sans-serif;
+    position: relative;
+    top: 10px;
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  .search-icon {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+  }
+  .input-wrapper {
+    position: relative;
+  }
+  .expand-icon {
+    transform: rotate(180deg);
+  }
+
+  .collapse-button {
+    padding: 4px;
+    height: 25px;
+    width: 25px;
+  }
+  .organisation-input {
+    width: 100%;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+  }
+  .organisation-input.ui-state-disabled,
+  .ui-widget:disabled {
+    opacity: 1;
+  }
+  .organisation-input-wrapper {
+    position: relative;
+  }
+  .down-arrow-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 7px;
+  }
+  .organisations-overlay .ui-overlaypanel-content {
+    padding: 5px;
+  }
+
+  .tree-drop-down {
+    position: absolute;
+    z-index: 1111;
+    background: white !important;
+    border: 1px solid #bebebe;
+    width: 100%;
+    min-width: 200px;
+    padding: 10px 0px 0px 10px;
+  }
+
+  #listMask{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: black;
+    display: none;
+    top: 0px;
+    left: 0px;
+    opacity: 0.2;
+  }
+}

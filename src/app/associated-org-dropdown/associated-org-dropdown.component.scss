@@ -1,0 +1,70 @@
+.organisation-input-wrapper,
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper {
+  flex: 1;
+}
+
+.organisation-input {
+  width: 100%;
+  text-overflow: ellipsis;
+  padding-right: 15px;
+}
+
+.organisation-input.ui-state-disabled,
+.ui-widget:disabled {
+  opacity: 1;
+}
+
+.down-arrow-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 7px;
+}
+#treeinput {
+  padding: 3px;
+  width: 100%;
+}
+.search-icon {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+.headerpanel {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 5px;
+}
+.Go_btn {
+  margin-left: 10px;
+  button {
+    color: #ffffff !important;
+    background: #3a3d3b !important;
+    border: 1px solid #a8a8a8 !important;
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+.associated-organisation {
+  min-height: 19px;
+  height: 136px;
+  max-height: 140px;
+  overflow: auto;
+  width: 459px;
+  min-width: 200px;
+  margin-left: -16px;
+}
+.collapse-button {
+  padding: 4px;
+  height: 25px;
+  width: 25px;
+}
+.collapse-icon {
+  margin-left: 4px;
+  font-size: 20px;
+}

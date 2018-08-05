@@ -1,0 +1,29 @@
+{
+	"totalSize": 2,
+	"Data": {
+		"betaTesters": [{
+			"id": 1,
+			"screenName": "aa000kgraham",
+			"url": "http://pb.mp01.tst.4444.com",
+			"status": 0
+		}, {
+			"id": 3,
+			"screenName": "test1-updateagain",
+			"url": "http://pb.mp01.tuuuut.454.com",
+			"status": 0
+		}]
+	},
+	"details": {
+		"urls": [{
+			"url": "http://pb.mp01.tst.4444.com"
+		}, {
+			"url": "http://pb.mp01.tuuuut.454.com"
+		}],
+		"screenNames": [{
+			"screenName": "aa000kgraham"
+		}, {
+			"screenName": "test1-updateagain"
+		}]
+	},
+	"status": "success"
+}

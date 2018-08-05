@@ -1,0 +1,79 @@
+ul {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 5px !important;
+}
+.inner-associated-orglist{
+.associated-org-list {
+  margin-left: 11px !important;
+}
+}
+.associated-org-list{
+li {
+  list-style-type: none;
+  cursor: pointer;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.childs {
+  margin-left: 20px;
+  list-style-type: disc;
+  color: #444444;
+}
+
+.parents {
+  margin-left: 12px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.parentname {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.childs:hover,
+.parentname:hover {
+  background: lightgray;
+}
+
+tree-view[rootNode='false'] ul {
+  padding: 0px 0px 0px 10px !important;
+}
+
+.hoverCls:hover {
+  background: lightgray;
+}
+
+.selectedCls {
+  background: gray;
+  color: white;
+}
+
+.node-expand-cls {
+  display: block !important;
+}
+
+.node-collapse-cls {
+  display: none !important;
+}
+
+span.deepnode {
+  background: gray;
+  color: white;
+}
+
+.parent_node {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  display: block;
+}
+
+
+}
+

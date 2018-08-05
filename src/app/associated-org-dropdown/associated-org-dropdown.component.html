@@ -1,0 +1,22 @@
+<div class="organisation-input-wrapper" (click)="childOrgSelect($event,dropdown)">
+  <input type="text" class="organisation-input" pInputText [disabled]="true" />
+  <i class="down-arrow-icon fa fa-sort-desc" aria-hidden="true"></i>
+</div>
+<p-overlayPanel #dropdown appendTo="body">
+  <div class="headerpanel">
+    <div class="input-wrapper">
+      <input #srchTxt id="treeinput" type="text" placeholder="Search..." (keyup)="onTreeSearch($event,srchTxt,treeData)">
+      <span class="search-icon fa fa-search" (click)="filterTree($event,srchTxt,treeData)"></span>
+    </div>
+    <div class="collapse-button">
+      <span class="collapse-icon fa fa-align-left" (click)="collapseAll()" title="Collapse"></span>
+    </div>
+    <div class="Go_btn">
+      <button (click)="onAddClick()">Add</button>
+    </div>
+  </div>
+  <div class="associated-organisation">
+    <app-associated-org-list [treeData]="treeData" [selectedAssociateOrganisations]="selectedAssociateOrganisations" [selectedUser]="selectedUser"
+      [isEditUser]="isEditUser" (selectedOrgsData)="selectedOrgsData($event)"></app-associated-org-list>
+  </div>
+</p-overlayPanel>

@@ -1,0 +1,44 @@
+<p-blockUI [target]="salespadgrid" [blocked]="loadingMaskVisible">
+  <i class="fa fa-circle-o-notch fa-2x fa-spin block-loader"></i>
+</p-blockUI>
+
+<div class="sales-pad-layout">
+  <div class="sales-pad-cls">
+    <div class="ui-g table-container">
+      <p-panel class="grid-panel" showHeader="false" #salespadgrid>
+        <div class="ui-g-12 ui-widget-header table-header">
+          <div class="ui-g-8 search-div">
+            <i class="icon-pad" aria-hidden="true"></i>
+            <input #gb type="text" [(ngModel)]="searchTerm" class="ui-g-6 search-input" icon="fa fa-search" pInputText size="50" placeholder="Search by Organization"
+              (keyup)="orgSearch($event)">
+            <i id="sp-reset" class="fa fa-refresh" title="Reset" (click)="resetSalesPad($event)"></i>
+          </div>
+          <button class="ui-toolbar-group-right btn-cls" pButton type="button" label="Add User" (click)="addUser(true)"></button>
+        </div>
+        <p-treeTable class="ui-g-12 tree-table" [value]="dataObject" #salestree [toggleColumnIndex]="2" (onNodeExpand)="loadAcctOrgs($event)">
+          <p-column class="ui-g-2" field="orgName" header="Organizations" [styleClass]="'org-col'"></p-column>
+          <p-column class="ui-g-3" field="screenName" header="Users" [styleClass]="'name-col'">
+          </p-column>
+          <p-column class="ui-g-3" field="acctOrgCount" header="Associated Organizations" [styleClass]="'child-org-col'">
+            <ng-template pTemplate="body" let-orgData="rowData">
+              <span class="associative-org">{{orgsDataCount(orgData)}}</span>
+            </ng-template>
+          </p-column>
+          <p-column class="ui-g-2" field="status" header="Status" [styleClass]="'status-col'">
+            <ng-template pTemplate="body" let-col let-statusData="rowData">
+              <span #childelement>{{getStatus(statusData,childelement)}}</span>
+            </ng-template>
+          </p-column>
+          <p-column class="ui-g-2" field="actions" header="Actions" [styleClass]="'actions-col'" headerStyleClass="action-field">
+            <ng-template let-i="rowIndex" let-col let-actionData="rowData" pTemplate="rowexpansion">
+              <button pButton type="button" title="Edit" *ngIf="hideFields(actionData)" class="btn-edit" (click)="editUserOrg(actionData,true,i)"></button>
+            </ng-template>
+          </p-column>
+        </p-treeTable>
+        <p-paginator class="ui-g-12 paginator" [rows]="limit" [totalRecords]="totalSize" (onPageChange)="paginate($event)"></p-paginator>
+        <add-user (addOrganization)="addOrganization($event)" (updateOrganization)="updateOrganization($event)">
+        </add-user>
+      </p-panel>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+ul {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 5px !important;
+}
+.inner-tree-view-list {
+  .tree-view-list {
+    margin-left: 11px !important;
+  }
+}
+.tree-view-list{
+li {
+  list-style-type: none;
+  cursor: pointer;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.childs {
+  margin-left: 11px;
+  list-style-type: disc;
+  color: #444444;
+}
+
+.childs:hover,
+.parentname:hover {
+  background: lightgray;
+}
+
+tree-view[rootNode='false'] ul {
+  padding: 0px 0px 0px 10px !important;
+}
+
+.hoverCls:hover {
+  background: lightgray;
+}
+
+.selectedCls {
+  background: gray;
+  color: white;
+}
+
+.node-expand-cls {
+  display: block !important;
+}
+
+.node-collapse-cls {
+  display: none !important;
+}
+
+span.deepnode {
+  background: gray;
+  color: white;
+}
+
+.parent_node {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  display: block;
+}
+
+}
+
+
+.tree-layout {
+  .ui-panel {
+    margin-right: 10px;
+    border: none;
+  }
+}
+.tree-view-block-ui {
+  .ui-blockui.ui-widget-overlay {
+    background: #f3f3f3;
+    opacity: 0.2;
+    i {
+      color: grey;
+    }
+  }
+}
